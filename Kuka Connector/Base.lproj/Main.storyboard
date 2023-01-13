@@ -68,6 +68,14 @@
                                     <action selector="connectButtonPressed:" destination="gxU-ah-uBJ" eventType="touchUpInside" id="W8k-Hu-XSh"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuka_silhouette" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-vy-EYt">
+                                <rect key="frame" x="96.666666666666686" y="518" width="200" height="200"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6iu-Cy-TI0"/>
+                                    <constraint firstAttribute="width" constant="200" id="xkz-CG-fkj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fa0-Ht-fUW"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,13 +94,16 @@
                             <constraint firstItem="btC-SC-1ht" firstAttribute="top" secondItem="iXb-cs-kWD" secondAttribute="bottom" constant="5" id="fgX-gB-jr9"/>
                             <constraint firstItem="Cdf-sV-V9e" firstAttribute="top" secondItem="btC-SC-1ht" secondAttribute="bottom" constant="30" id="gKG-UA-PgY"/>
                             <constraint firstItem="iXb-cs-kWD" firstAttribute="leading" secondItem="Fa0-Ht-fUW" secondAttribute="leading" constant="50" id="hn1-G7-DZR"/>
+                            <constraint firstItem="Fa0-Ht-fUW" firstAttribute="bottom" secondItem="4qH-vy-EYt" secondAttribute="bottom" constant="100" id="qap-9L-s3s"/>
                             <constraint firstItem="Fa0-Ht-fUW" firstAttribute="trailing" secondItem="iXb-cs-kWD" secondAttribute="trailing" constant="50" id="s2X-b2-bpq"/>
+                            <constraint firstItem="4qH-vy-EYt" firstAttribute="centerX" secondItem="hZc-AE-BaD" secondAttribute="centerX" id="x3Z-1E-qI9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Подключение" id="qzl-Bm-eeZ"/>
                     <connections>
                         <outlet property="connectButton" destination="Cdf-sV-V9e" id="g82-PH-8AQ"/>
                         <outlet property="ipInput" destination="Dxd-fG-mAV" id="MTA-lu-suF"/>
+                        <outlet property="kukaImageView" destination="4qH-vy-EYt" id="PtJ-NR-hGS"/>
                         <outlet property="portInput" destination="btC-SC-1ht" id="w0n-dJ-8zY"/>
                         <segue destination="9Yd-8U-2OX" kind="show" identifier="goToActions" animates="NO" id="85d-UW-JVD"/>
                     </connections>
@@ -173,5 +184,6 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
+        <image name="kuka_silhouette" width="1500" height="1500"/>
     </resources>
 </document>

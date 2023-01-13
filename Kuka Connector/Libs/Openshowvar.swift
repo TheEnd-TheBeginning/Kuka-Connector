@@ -8,25 +8,37 @@
 import Foundation
 
 class Openshowvar {
-    var ip: String
-    var port: UInt16
-    var msg_id: Int
-    var sock: BSD_Socket
-    var can_connect: Bool
-    init(ip: String, port: UInt16) {
+    var ip: String?
+    var port: UInt16?
+    var msg_id: Int = Int.random(in: 1...100)
+    var sock: BSD_Socket?
+//    var can_connect: Box<Bool> = Box(false)
+//    init() {
+//        self.ip = "127.0.0.1"
+//        self.port = 0
+//        self.msg_id = Int.random(in: 1...100)
+//        self.sock = BSD_Socket(Domain: AF_INET, Type: SOCK_STREAM, Protocol: IPPROTO_TCP)
+//        print("Void init")
+//    }
+    func connect(ip: String, port: UInt16) -> Bool {
         self.ip = ip
         self.port = port
-        self.msg_id = Int.random(in: 1...100)
+//        self.msg_id = Int.random(in: 1...100)
         self.sock = BSD_Socket(Domain: AF_INET, Type: SOCK_STREAM, Protocol: IPPROTO_TCP)
-        if self.sock.sock == -1 {
+        if self.sock?.sock == -1 {
             print("Error creating BSD Socket")
-        }
-        let sockConnect = self.sock.connectSocket(ip: self.ip, port: self.port)
-        if (sockConnect == -1) {
-            print("Error connecting BSD Socket")
-            self.can_connect = false
+//            self.can_connect.value = false
+            return false
         } else {
-            self.can_connect = true
+            let sockConnect = self.sock?.connectSocket(ip: self.ip!, port: self.port!)
+            if (sockConnect == -1) {
+                print("Error connecting BSD Socket")
+//                self.can_connect.value = false
+                return false
+            } else {
+//                self.can_connect.value = true
+                return true
+            }
         }
     }
     
@@ -63,10 +75,10 @@ class Openshowvar {
         
         sendBuffer += varname_array
         
-        let sendSuccess = send(self.sock.sock, &sendBuffer, sendBuffer.count, 0)
+        let sendSuccess = send(self.sock!.sock, &sendBuffer, sendBuffer.count, 0)
                 
         var recvBuffer = [UInt8](repeating: 0, count: 256)
-        let recvSuccess = recv(self.sock.sock, &recvBuffer, 256, 0)
+        let recvSuccess = recv(self.sock!.sock, &recvBuffer, 256, 0)
         return recvBuffer
     }
     
@@ -116,10 +128,10 @@ class Openshowvar {
         
         sendBuffer += value_array
         
-        let sendSuccess = send(self.sock.sock, &sendBuffer, sendBuffer.count, 0)
+        let sendSuccess = send(self.sock!.sock, &sendBuffer, sendBuffer.count, 0)
         
         var recvBuffer = [UInt8](repeating: 0, count: 256)
-        let recvSuccess = recv(self.sock.sock, &recvBuffer, 256, 0)
+        let recvSuccess = recv(self.sock!.sock, &recvBuffer, 256, 0)
         return recvBuffer
     }
     

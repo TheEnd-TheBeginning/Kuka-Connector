@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */; };
+		CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D2B2970AE0300A866DE /* Box.swift */; };
 		CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DADC296D7C3100970780 /* AppDelegate.swift */; };
 		CE76DAE1296D7C3200970780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAE0296D7C3200970780 /* ViewController.swift */; };
 		CE76DAE4296D7C3200970780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE76DAE2296D7C3200970780 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
+		CE2F4D2B2970AE0300A866DE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		CE76DAD9296D7C3100970780 /* Kuka Connector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kuka Connector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE76DADC296D7C3100970780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE76DAE0296D7C3200970780 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				CE76DAEA296D7C3800970780 /* LaunchScreen.storyboard */,
 				CE76DAED296D7C3800970780 /* Info.plist */,
 				CE76DAE5296D7C3200970780 /* Kuka_Connector.xcdatamodeld */,
+				CE2F4D2B2970AE0300A866DE /* Box.swift */,
 			);
 			path = "Kuka Connector";
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				CE76DAF9296DD3E800970780 /* Kuka.swift in Sources */,
 				CE76DAF5296D7D1600970780 /* BSDSocket.swift in Sources */,
 				CE76DAE7296D7C3200970780 /* Kuka_Connector.xcdatamodeld in Sources */,
+				CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */,
 				CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */,
 				CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */,
 			);

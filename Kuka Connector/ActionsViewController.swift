@@ -17,6 +17,6 @@ class ActionsViewController: UIViewController {
     }
     
     @IBAction func ActionsBarButtonPressed(_ sender: Any) {
-        let newKuka = Kuka(robot: self.robot!)
+        let newKuka = Kuka.read_cartenssian(robot: self.robot!)
     }
 }
