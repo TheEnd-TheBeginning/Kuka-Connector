@@ -124,9 +124,12 @@ class Openshowvar {
         sendBuffer.append(test82)
         
         //Байтовая строка под значение переменной(Variable Value)
+        print(value)
         let value_array: [UInt8] = Array(value.utf8)
         
         sendBuffer += value_array
+        
+        print("sendBuffer: \(sendBuffer)")
         
         let sendSuccess = send(self.sock!.sock, &sendBuffer, sendBuffer.count, 0)
         

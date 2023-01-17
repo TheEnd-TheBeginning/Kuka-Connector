@@ -10,7 +10,21 @@
 import Foundation
 
 enum KukaActions: String, CaseIterable {
-    case cartessian = "Получить координаты"
+    case read_cartessian = "Получить координаты"
+    case read_name = "Узнать имя робота"
+//    case read_advanced = ""
+    case open_grip = "Открыть захват"
+    case close_grip = "Закрыть захват"
+//    case read_APO = ""
+//    case ptp = ""
+//    case read_base = ""
+//    case cvbase = ""
+    case ptp = "Задать координаты"
+//    case set_tool = ""
+//    case read_input = ""
+//    case read_out = ""
+    case read_tcp_velocity = "Узнать скорость"
+//    case read_tool = ""
 }
 
 class Kuka {
@@ -97,34 +111,38 @@ class Kuka {
         
         //x:329, y: 1.61, z: 386.61
         //A: -157.72, B: -0.93, C: 179.62
-        let x_cartessian = Float(cartessian_array[2]) ?? 0
-        print("x_cartessian: \(x_cartessian)")
-        let y_cartessian = Float(cartessian_array[4]) ?? 0
-        print("y_cartessian: \(y_cartessian)")
-        let z_cartessian = Float(cartessian_array[6]) ?? 0
-        print("z_cartessian: \(z_cartessian)")
-        let A_cartessian = Float(cartessian_array[8]) ?? 0
-        print("A_cartessian: \(A_cartessian)")
-        let B_cartessian = Float(cartessian_array[10]) ?? 0
-        print("B_cartessian: \(B_cartessian)")
-        let C_cartessian = Float(cartessian_array[12]) ?? 0
-        print("C_cartessian: \(C_cartessian)")
-        let E1_cartessian = Float(cartessian_array[14]) ?? 0
-        print("E1_cartessian: \(E1_cartessian)")
-        let E2_cartessian = Float(cartessian_array[16]) ?? 0
-        print("E2_cartessian: \(E2_cartessian)")
-        let E3_cartessian = Float(cartessian_array[18]) ?? 0
-        print("E3_cartessian: \(E3_cartessian)")
-        let E4_cartessian = Float(cartessian_array[20]) ?? 0
-        print("E4_cartessian: \(E4_cartessian)")
-        let E5_cartessian = Float(cartessian_array[22]) ?? 0
-        print("E5_cartessian: \(E5_cartessian)")
-        let E6_cartessian = Float(cartessian_array[24]) ?? 0
-        print("E6_cartessian: \(E6_cartessian)")
-        return (x_cartessian, y_cartessian, z_cartessian, A_cartessian, B_cartessian, C_cartessian)
+        if (cartessian_array.count > 24) {
+            let x_cartessian = Float(cartessian_array[2]) ?? 0
+            print("x_cartessian: \(x_cartessian)")
+            let y_cartessian = Float(cartessian_array[4]) ?? 0
+            print("y_cartessian: \(y_cartessian)")
+            let z_cartessian = Float(cartessian_array[6]) ?? 0
+            print("z_cartessian: \(z_cartessian)")
+            let A_cartessian = Float(cartessian_array[8]) ?? 0
+            print("A_cartessian: \(A_cartessian)")
+            let B_cartessian = Float(cartessian_array[10]) ?? 0
+            print("B_cartessian: \(B_cartessian)")
+            let C_cartessian = Float(cartessian_array[12]) ?? 0
+            print("C_cartessian: \(C_cartessian)")
+            let E1_cartessian = Float(cartessian_array[14]) ?? 0
+            print("E1_cartessian: \(E1_cartessian)")
+            let E2_cartessian = Float(cartessian_array[16]) ?? 0
+            print("E2_cartessian: \(E2_cartessian)")
+            let E3_cartessian = Float(cartessian_array[18]) ?? 0
+            print("E3_cartessian: \(E3_cartessian)")
+            let E4_cartessian = Float(cartessian_array[20]) ?? 0
+            print("E4_cartessian: \(E4_cartessian)")
+            let E5_cartessian = Float(cartessian_array[22]) ?? 0
+            print("E5_cartessian: \(E5_cartessian)")
+            let E6_cartessian = Float(cartessian_array[24]) ?? 0
+            print("E6_cartessian: \(E6_cartessian)")
+            return (x_cartessian, y_cartessian, z_cartessian, A_cartessian, B_cartessian, C_cartessian)
+        } else {
+            return (0,0,0,0,0,0)
+        }
     }
     
-    func cvbase(robot: Openshowvar) -> (x_cv: Float, y_cv: Float, z_cv: Float) {
+    static func cvbase(robot: Openshowvar) -> (x_cv: Float, y_cv: Float, z_cv: Float) {
         let cartessian = robot.read("$BASE_DATA[20]")
         let cartessian_ascii: String = String(bytes: cartessian, encoding: .ascii) ?? ""
         var replaced_catessian = cartessian_ascii.replacingOccurrences(of: ",", with: "")
@@ -138,37 +156,37 @@ class Kuka {
         return (x_cv, y_cv, z_cv)
     }
 
-    func set_base(robot: Openshowvar, arr: [Any]) {
+    static func set_base(robot: Openshowvar, arr: [Any]) {
         Kuka.send_Frame(robot: robot, arr, "$COM_FRAME")
         robot.write("COM_CASEVAR", "8")
     }
     
-    func set_tool(robot: Openshowvar, arr: [Any]) {
+    static func set_tool(robot: Openshowvar, arr: [Any]) {
         Kuka.send_Frame(robot: robot, arr, "$COM_FRAME")
         robot.write("COM_CASEVAR", "8")
         Kuka.send_Frame(robot: robot, arr, "$COM_FRAME")
         robot.write("COM_CASEVAR", "7")
     }
     
-    func read_input(robot: Openshowvar, index: Int) -> String {
+    static func read_input(robot: Openshowvar, index: Int) -> String {
         let index = robot.read("$IN[\(index)]")
         let index_ascii: String = String(bytes: index, encoding: .ascii) ?? ""
         return index_ascii
     }
     
-    func read_out(robot: Openshowvar, index: Int) -> String {
+    static func read_out(robot: Openshowvar, index: Int) -> String {
         let index = robot.read("$OUT[\(index)]")
         let index_ascii: String = String(bytes: index, encoding: .ascii) ?? ""
         return index_ascii
     }
     
-    func read_tcp_velocity(robot: Openshowvar) -> String {
+    static func read_tcp_velocity(robot: Openshowvar) -> String {
         let velocity = robot.read("$VEL_C")
         let velocity_ascii: String = String(bytes: velocity, encoding: .ascii) ?? ""
         return velocity_ascii
     }
     
-    func read_tool(robot: Openshowvar) -> (tool_frame_x: Float, tool_frame_y: Float, tool_frame_z: Float, tool_frame_A: Float, tool_frame_B: Float, tool_frame_C: Float) {
+    static func read_tool(robot: Openshowvar) -> (tool_frame_x: Float, tool_frame_y: Float, tool_frame_z: Float, tool_frame_A: Float, tool_frame_B: Float, tool_frame_C: Float) {
         let string = robot.read("$TOOL")
         let string_ascii: String = String(bytes: string, encoding: .ascii) ?? ""
         var replaced_string = string_ascii.replacingOccurrences(of: ",", with: "")

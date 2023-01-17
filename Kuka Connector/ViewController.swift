@@ -23,16 +23,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.ipInput.delegate = self
         self.portInput.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        let kukaImage = UIImage(named: "kuka_silhouette")?.withTintColor(.black, renderingMode: .alwaysTemplate)
+        self.kukaImageView.image = kukaImage
     }
     
     func changeKukaImage() -> Timer {
+//        var animationSec = 0
         let kukaImage = UIImage(named: "kuka_silhouette")?.withTintColor(.black, renderingMode: .alwaysTemplate)
-        var animationSec = 0
-        self.kukaImageView.image = kukaImage
+//        self.kukaImageView.image = kukaImage
 //        DispatchQueue.global(qos: .userInteractive).async {
             let animationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                animationSec += 1
-                print("animation sec: \(animationSec)")
+//                animationSec += 1
+//                print("animation sec: \(animationSec)")
                 self.kukaImageView.image = self.kukaImageView.image?.withHorizontallyFlippedOrientation()
             }
 //        }
