@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var connectButton: UIButton!
+    @IBOutlet weak var connectButton: GreenButton!
     @IBOutlet weak var portInput: UITextField!
     @IBOutlet weak var ipInput: UITextField!
     @IBOutlet weak var kukaImageView: UIImageView!
@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backButtonTitle = ""
-        self.connectButton.layer.cornerRadius = 10
+//        self.connectButton.layer.cornerRadius = 10
 //        self.disconnectButton.layer.cornerRadius = 10
 //        self.disconnectButton.isEnabled = false
         self.ipInput.delegate = self
@@ -74,21 +74,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             animationTimer.invalidate()
                             print("Connection error")
                             DispatchQueue.main.async {
-                                self.connectButton.isEnabled = true
+//                                self.connectButton.isEnabled = true
                                 self.presentAlert(title: "Сообщение", message: "Ошибка подключения")
                             }
                         }
                     }
                 } else {
-                    self.connectButton.isEnabled = true
+//                    self.connectButton.isEnabled = true
                     self.presentAlert(title: "Сообщение", message: "Порт должен быть числом")
                 }
             } else {
-                self.connectButton.isEnabled = true
+//                self.connectButton.isEnabled = true
                 self.presentAlert(title: "Сообщение", message: "Заполните поле \"Порт\"")
             }
         } else {
-            self.connectButton.isEnabled = true
+//            self.connectButton.isEnabled = true
             self.presentAlert(title: "Сообщение", message: "Заполните поле \"ip\"")
         }
     }
