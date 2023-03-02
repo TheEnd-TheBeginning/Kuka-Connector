@@ -11,7 +11,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var connectButton: NeonButton!
     @IBOutlet weak var portInput: UITextField!
     @IBOutlet weak var ipInput: UITextField!
-    @IBOutlet weak var kukaImageView: UIImageView!
     var robot: Openshowvar = Openshowvar()
     
     override func viewDidLoad() {
@@ -22,17 +21,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.ipInput.delegate = self
         self.portInput.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-        let kukaImage = UIImage(named: "kuka_silhouette")?.withTintColor(.black, renderingMode: .alwaysTemplate)
-        self.kukaImageView.image = kukaImage
-    }
-    
-    func changeKukaImage() -> Timer {
-        let kukaImage = UIImage(named: "kuka_silhouette")?.withTintColor(.black, renderingMode: .alwaysTemplate)
-            let animationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                self.kukaImageView.image = self.kukaImageView.image?.withHorizontallyFlippedOrientation()
-            }
-//        }
-        return animationTimer
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,53 +32,50 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func connectButtonPressed(_ sender: Any) {
-            self.connectButton.isEnabled = false
-    }
-    
 //    @IBAction func connectButtonPressed(_ sender: Any) {
-//        let animationTimer = self.changeKukaImage()
-//        self.connectButton.isEnabled = false
-//        self.ipInput.resignFirstResponder()
-//        self.portInput.resignFirstResponder()
-//        if (ipInput.text != "" && ipInput.text != nil) {
-//            if (portInput.text != nil && portInput.text != "") {
-//                if let intPort = Int(portInput.text!) {
-//                    let uint16port: UInt16 = UInt16(intPort)
-////                    self.robot = Openshowvar(ip: ipInput.text!, port: uint16port)
-//                    let ipInputText: String = self.ipInput.text!
-//                    DispatchQueue.global(qos: .userInitiated).async {
-//                        let can_connect = self.robot.connect(ip: ipInputText, port: uint16port)
-//                        if can_connect {
-//                            animationTimer.invalidate()
-//    //                        self.disconnectButton.isEnabled = true
-//    //                        viewModel.read_cartenssian()
-//    //                        self.presentAlert(title: "Сообщение", message: "Подключение прошло успешно")
-//                            DispatchQueue.main.async {
-//                                self.performSegue(withIdentifier: "goToActions", sender: nil)
-//                            }
-//                        } else {
-//                            animationTimer.invalidate()
-//                            print("Connection error")
-//                            DispatchQueue.main.async {
-////                                self.connectButton.isEnabled = true
-//                                self.presentAlert(title: "Сообщение", message: "Ошибка подключения")
-//                            }
-//                        }
-//                    }
-//                } else {
-////                    self.connectButton.isEnabled = true
-//                    self.presentAlert(title: "Сообщение", message: "Порт должен быть числом")
-//                }
-//            } else {
-////                self.connectButton.isEnabled = true
-//                self.presentAlert(title: "Сообщение", message: "Заполните поле \"Порт\"")
-//            }
-//        } else {
-////            self.connectButton.isEnabled = true
-//            self.presentAlert(title: "Сообщение", message: "Заполните поле \"ip\"")
-//        }
+//            self.connectButton.isEnabled = false
 //    }
+    
+    @IBAction func connectButtonPressed(_ sender: Any) {
+        self.connectButton.isEnabled = false
+        self.ipInput.resignFirstResponder()
+        self.portInput.resignFirstResponder()
+        if (ipInput.text != "" && ipInput.text != nil) {
+            if (portInput.text != nil && portInput.text != "") {
+                if let intPort = Int(portInput.text!) {
+                    let uint16port: UInt16 = UInt16(intPort)
+//                    self.robot = Openshowvar(ip: ipInput.text!, port: uint16port)
+                    let ipInputText: String = self.ipInput.text!
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let can_connect = self.robot.connect(ip: ipInputText, port: uint16port)
+                        if can_connect {
+    //                        self.disconnectButton.isEnabled = true
+    //                        viewModel.read_cartenssian()
+    //                        self.presentAlert(title: "Сообщение", message: "Подключение прошло успешно")
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "goToActions", sender: nil)
+                            }
+                        } else {
+                            print("Connection error")
+                            DispatchQueue.main.async {
+//                                self.connectButton.isEnabled = true
+                                self.presentAlert(title: "Сообщение", message: "Ошибка подключения")
+                            }
+                        }
+                    }
+                } else {
+//                    self.connectButton.isEnabled = true
+                    self.presentAlert(title: "Сообщение", message: "Порт должен быть числом")
+                }
+            } else {
+//                self.connectButton.isEnabled = true
+                self.presentAlert(title: "Сообщение", message: "Заполните поле \"Порт\"")
+            }
+        } else {
+//            self.connectButton.isEnabled = true
+            self.presentAlert(title: "Сообщение", message: "Заполните поле \"ip\"")
+        }
+    }
     
 //    @IBAction func disconnectButtonPressed(_ sender: Any) {
 //        viewModel.robot.sock.closeSocket()

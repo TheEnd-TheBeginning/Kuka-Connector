@@ -22,21 +22,13 @@
                                     <constraint firstAttribute="height" constant="50" id="wls-gv-raL"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Подключиться">
-                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ПОДКЛЮЧИТЬСЯ">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="connectButtonPressed:" destination="gxU-ah-uBJ" eventType="touchUpInside" id="W8k-Hu-XSh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuka_silhouette" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-vy-EYt">
-                                <rect key="frame" x="96.666666666666686" y="498" width="200" height="200"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="6iu-Cy-TI0"/>
-                                    <constraint firstAttribute="width" constant="200" id="xkz-CG-fkj"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2A-7U-tCq">
                                 <rect key="frame" x="15" y="123" width="363" height="105"/>
                                 <subviews>
@@ -115,20 +107,17 @@
                             <constraint firstItem="LI7-Df-OuV" firstAttribute="top" secondItem="s2A-7U-tCq" secondAttribute="bottom" id="Ait-VP-d4R"/>
                             <constraint firstItem="Fa0-Ht-fUW" firstAttribute="trailing" secondItem="s2A-7U-tCq" secondAttribute="trailing" constant="15" id="ErU-eB-A7m"/>
                             <constraint firstItem="Cdf-sV-V9e" firstAttribute="top" secondItem="LI7-Df-OuV" secondAttribute="bottom" constant="40" id="GBY-4e-54h"/>
-                            <constraint firstItem="4qH-vy-EYt" firstAttribute="top" secondItem="Cdf-sV-V9e" secondAttribute="bottom" constant="75" id="M5e-XI-LLP"/>
                             <constraint firstItem="s2A-7U-tCq" firstAttribute="top" secondItem="Fa0-Ht-fUW" secondAttribute="top" constant="20" id="MMq-70-zY8"/>
                             <constraint firstItem="Cdf-sV-V9e" firstAttribute="leading" secondItem="Fa0-Ht-fUW" secondAttribute="leading" constant="50" id="NA1-Zk-Dbu"/>
                             <constraint firstItem="LI7-Df-OuV" firstAttribute="leading" secondItem="Fa0-Ht-fUW" secondAttribute="leading" constant="15" id="QMk-FV-161"/>
                             <constraint firstItem="s2A-7U-tCq" firstAttribute="leading" secondItem="Fa0-Ht-fUW" secondAttribute="leading" constant="15" id="g4A-Yz-Tg8"/>
                             <constraint firstItem="Fa0-Ht-fUW" firstAttribute="trailing" secondItem="LI7-Df-OuV" secondAttribute="trailing" constant="15" id="r9g-Jn-sII"/>
-                            <constraint firstItem="4qH-vy-EYt" firstAttribute="centerX" secondItem="hZc-AE-BaD" secondAttribute="centerX" id="x3Z-1E-qI9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Подключение" id="qzl-Bm-eeZ"/>
                     <connections>
                         <outlet property="connectButton" destination="Cdf-sV-V9e" id="g82-PH-8AQ"/>
                         <outlet property="ipInput" destination="Dxd-fG-mAV" id="f1X-6a-lK7"/>
-                        <outlet property="kukaImageView" destination="4qH-vy-EYt" id="PtJ-NR-hGS"/>
                         <outlet property="portInput" destination="lNH-dG-b0F" id="a7R-hb-nv7"/>
                         <segue destination="9Yd-8U-2OX" kind="show" identifier="goToActions" animates="NO" id="85d-UW-JVD"/>
                     </connections>
@@ -402,6 +391,5 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
-        <image name="kuka_silhouette" width="1500" height="1500"/>
     </resources>
 </document>
