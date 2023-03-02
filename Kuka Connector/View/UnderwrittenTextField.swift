@@ -16,9 +16,7 @@ class UnderwrittenTextField: UITextField {
         self.layer.borderColor = UIColor.black.cgColor.copy(alpha: 0.2)
         self.layer.borderWidth = 3
         self.layer.cornerRadius = 5
-//        self.clipsToBounds = false
         self.borderStyle = .roundedRect
-//        self.defaultTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 17)]
-        self.font = UIFont(name: "Menlo", size: 17)
+        self.font = Customization.getCustomFont(font: .Menlo, size: 17, width: .regular)
     }
 }

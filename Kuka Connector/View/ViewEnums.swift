@@ -7,6 +7,12 @@
 
 import UIKit
 
+
+
+enum FontNamesEnum: String {
+    case Menlo = "Menlo"
+}
+
 enum ColorNamesEnum: String {
     case MainGreenButton = "MainGreenButton"
     case MainPurpleButton = "MainPurpleButton"
@@ -15,6 +21,7 @@ enum ColorNamesEnum: String {
     case BacklightTextGreenButton = "BacklightTextGreenButton"
     case BacklightTextPurpleButton = "BacklightTextPurpleButton"
     case BackgroundTextField = "BackgroundTextField"
+    case BackgroundView = "BackgroundView"
     
     var uiColor: UIColor {
         return UIColor(named: self.rawValue)!
