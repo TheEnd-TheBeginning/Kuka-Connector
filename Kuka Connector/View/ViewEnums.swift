@@ -14,6 +14,7 @@ enum ColorNamesEnum: String {
     case BacklightPurpleButton = "BacklightPurpleButton"
     case BacklightTextGreenButton = "BacklightTextGreenButton"
     case BacklightTextPurpleButton = "BacklightTextPurpleButton"
+    case BackgroundTextField = "BackgroundTextField"
     
     var uiColor: UIColor {
         return UIColor(named: self.rawValue)!
