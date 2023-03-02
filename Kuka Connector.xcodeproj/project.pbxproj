@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440884EA29AF2F6400F28485 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440884E929AF2F6400F28485 /* NeonButton.swift */; };
+		4452446129ACC6FA00051F00 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452446029ACC6FA00051F00 /* AddressView.swift */; };
+		4452446629ACC74F00051F00 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452446529ACC74F00051F00 /* GreenButton.swift */; };
+		4452446829ACC77800051F00 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452446729ACC77800051F00 /* PurpleButton.swift */; };
+		4452446A29ACC7C500051F00 /* PurpleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4452446929ACC7C500051F00 /* PurpleButton.xib */; };
+		4452446C29ACD8F700051F00 /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452446B29ACD8F700051F00 /* Customization.swift */; };
+		4452447229AF209C00051F00 /* ViewEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452447129AF209C00051F00 /* ViewEnums.swift */; };
 		CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */; };
 		CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D2B2970AE0300A866DE /* Box.swift */; };
 		CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DADC296D7C3100970780 /* AppDelegate.swift */; };
 		CE76DAE1296D7C3200970780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAE0296D7C3200970780 /* ViewController.swift */; };
 		CE76DAE4296D7C3200970780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE76DAE2296D7C3200970780 /* Main.storyboard */; };
-		CE76DAE7296D7C3200970780 /* Kuka_Connector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAE5296D7C3200970780 /* Kuka_Connector.xcdatamodeld */; };
 		CE76DAE9296D7C3800970780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE76DAE8296D7C3800970780 /* Assets.xcassets */; };
 		CE76DAEC296D7C3800970780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE76DAEA296D7C3800970780 /* LaunchScreen.storyboard */; };
 		CE76DAF5296D7D1600970780 /* BSDSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAF4296D7D1600970780 /* BSDSocket.swift */; };
@@ -21,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440884E929AF2F6400F28485 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
+		4452446029ACC6FA00051F00 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		4452446529ACC74F00051F00 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
+		4452446729ACC77800051F00 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
+		4452446929ACC7C500051F00 /* PurpleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurpleButton.xib; sourceTree = "<group>"; };
+		4452446B29ACD8F700051F00 /* Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
+		4452447129AF209C00051F00 /* ViewEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEnums.swift; sourceTree = "<group>"; };
 		CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
 		CE2F4D2B2970AE0300A866DE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		CE76DAD9296D7C3100970780 /* Kuka Connector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kuka Connector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +60,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4452445B29ACC67700051F00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4452445C29ACC67C00051F00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4452446229ACC70900051F00 /* Buttons */,
+				4452445F29ACC6A200051F00 /* AddressView */,
+				4452446B29ACD8F700051F00 /* Customization.swift */,
+				4452447129AF209C00051F00 /* ViewEnums.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4452445F29ACC6A200051F00 /* AddressView */ = {
+			isa = PBXGroup;
+			children = (
+				4452446029ACC6FA00051F00 /* AddressView.swift */,
+			);
+			path = AddressView;
+			sourceTree = "<group>";
+		};
+		4452446229ACC70900051F00 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4452446429ACC72600051F00 /* PurpleButton */,
+				4452446329ACC71600051F00 /* GreenButton */,
+				440884E929AF2F6400F28485 /* NeonButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4452446329ACC71600051F00 /* GreenButton */ = {
+			isa = PBXGroup;
+			children = (
+				4452446529ACC74F00051F00 /* GreenButton.swift */,
+			);
+			path = GreenButton;
+			sourceTree = "<group>";
+		};
+		4452446429ACC72600051F00 /* PurpleButton */ = {
+			isa = PBXGroup;
+			children = (
+				4452446729ACC77800051F00 /* PurpleButton.swift */,
+				4452446929ACC7C500051F00 /* PurpleButton.xib */,
+			);
+			path = PurpleButton;
+			sourceTree = "<group>";
+		};
+		4452446F29AF204900051F00 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4452447029AF205C00051F00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CE76DAD0296D7C3100970780 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +146,10 @@
 		CE76DADB296D7C3100970780 /* Kuka Connector */ = {
 			isa = PBXGroup;
 			children = (
+				4452447029AF205C00051F00 /* ViewModel */,
+				4452446F29AF204900051F00 /* Coordinator */,
+				4452445C29ACC67C00051F00 /* View */,
+				4452445B29ACC67700051F00 /* Model */,
 				CE76DAF3296D7C7400970780 /* Libs */,
 				CE76DADC296D7C3100970780 /* AppDelegate.swift */,
 				CE76DAE0296D7C3200970780 /* ViewController.swift */,
@@ -149,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE76DAEC296D7C3800970780 /* LaunchScreen.storyboard in Resources */,
+				4452446A29ACC7C500051F00 /* PurpleButton.xib in Resources */,
 				CE76DAE9296D7C3800970780 /* Assets.xcassets in Resources */,
 				CE76DAE4296D7C3200970780 /* Main.storyboard in Resources */,
 			);
@@ -162,13 +247,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE76DAF7296D7DAE00970780 /* Openshowvar.swift in Sources */,
+				440884EA29AF2F6400F28485 /* NeonButton.swift in Sources */,
 				CE76DAE1296D7C3200970780 /* ViewController.swift in Sources */,
 				CE76DAF9296DD3E800970780 /* Kuka.swift in Sources */,
 				CE76DAF5296D7D1600970780 /* BSDSocket.swift in Sources */,
-				CE76DAE7296D7C3200970780 /* Kuka_Connector.xcdatamodeld in Sources */,
+				4452446129ACC6FA00051F00 /* AddressView.swift in Sources */,
+				4452446829ACC77800051F00 /* PurpleButton.swift in Sources */,
+				4452447229AF209C00051F00 /* ViewEnums.swift in Sources */,
 				CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */,
+				4452446629ACC74F00051F00 /* GreenButton.swift in Sources */,
 				CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */,
 				CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */,
+				4452446C29ACD8F700051F00 /* Customization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
