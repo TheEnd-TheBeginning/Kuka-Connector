@@ -36,6 +36,7 @@ struct ButtonStateColors {
 
 class NeonButton: UIButton {
     var buttonColorSet: ButtonColorSetEnum = .greenButton
+    var buttonTextLabel: String = "Button"
     
     override func draw(_ rect: CGRect) {
         self.backgroundColor = .clear
@@ -48,9 +49,9 @@ class NeonButton: UIButton {
             self.touchDown()
         }
         
-        var attributedLabel = Customization.getCustomLabel(labelString: "ПОДКЛЮЧИТЬСЯ", labelColor: self.buttonColorSet.stateColors.enabledState.textColor, shadowColor: self.buttonColorSet.stateColors.enabledState.textColor)
+        var attributedLabel = Customization.getCustomLabel(labelString: self.buttonTextLabel, labelColor: self.buttonColorSet.stateColors.enabledState.textColor, shadowColor: self.buttonColorSet.stateColors.enabledState.textColor)
         self.setAttributedTitle(attributedLabel, for: .normal)
-        attributedLabel = Customization.getCustomLabel(labelString: "ПОДКЛЮЧИТЬСЯ", labelColor: self.buttonColorSet.stateColors.disabledState.textColor, shadowColor: self.buttonColorSet.stateColors.disabledState.textColor)
+        attributedLabel = Customization.getCustomLabel(labelString: self.buttonTextLabel, labelColor: self.buttonColorSet.stateColors.disabledState.textColor, shadowColor: self.buttonColorSet.stateColors.disabledState.textColor)
         self.setAttributedTitle(attributedLabel, for: .disabled)
         
 //        let innerRect = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY + 10, width: self.bounds.width - 10, height: self.bounds.height - 10)

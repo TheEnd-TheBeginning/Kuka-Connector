@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.connectButton.buttonColorSet = .purpleButton
+        self.connectButton.buttonTextLabel = "ПОДКЛЮЧИТЬСЯ"
         self.navigationItem.backButtonTitle = ""
         
         self.ipInput.delegate = self
@@ -33,7 +34,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func connectButtonPressed(_ sender: Any) {
-            self.connectButton.isEnabled = false
+        self.connectButton.isEnabled = false
+        sleep(1)
+        self.performSegue(withIdentifier: "goToActions", sender: nil)
     }
     
 //    @IBAction func connectButtonPressed(_ sender: Any) {

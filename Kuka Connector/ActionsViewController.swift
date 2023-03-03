@@ -8,26 +8,27 @@
 import UIKit
 
 class ActionsViewController: UIViewController {
-    @IBOutlet weak var ActionsBarButton: UIBarButtonItem!
-    @IBOutlet weak var ActionsStackView: UIStackView!
-    @IBOutlet weak var x_TextField: UITextField!
-    @IBOutlet weak var y_TextField: UITextField!
-    @IBOutlet weak var z_TextField: UITextField!
-    @IBOutlet weak var A_TextField: UITextField!
-    @IBOutlet weak var B_TextField: UITextField!
-    @IBOutlet weak var C_TextField: UITextField!
-    @IBOutlet weak var readCartessianButt: UIButton!
-    @IBOutlet weak var writeCartessianButt: UIButton!
+    @IBOutlet weak var x_TextField: UnderwrittenTextField!
+    @IBOutlet weak var y_TextField: UnderwrittenTextField!
+    @IBOutlet weak var z_TextField: UnderwrittenTextField!
+    @IBOutlet weak var A_TextField: UnderwrittenTextField!
+    @IBOutlet weak var B_TextField: UnderwrittenTextField!
+    @IBOutlet weak var C_TextField: UnderwrittenTextField!
+    @IBOutlet weak var disconnectButton: NeonButton!
+    @IBOutlet weak var readCartenssianButton: NeonButton!
+    @IBOutlet weak var writeCartenssianButton: NeonButton!
+    
     var actionButtons: [KukaActions:UIButton] = [:]
     var robot: Openshowvar? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ActionsStackView.isHidden = true
-        self.ActionsStackView.layer.cornerRadius = 10
-        self.readCartessianButt.layer.cornerRadius = 10
-        self.writeCartessianButt.layer.cornerRadius = 10
-        self.setActionButtons()
-        self.setStackView()
+        self.disconnectButton.buttonColorSet = .purpleButton
+        self.disconnectButton.buttonTextLabel = "ОТКЛЮЧИТЬСЯ"
+        
+        self.readCartenssianButton.buttonTextLabel = "Прочитать переменные"
+        self.writeCartenssianButton.buttonTextLabel = "Записать переменные"
+        
         self.initBase()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
@@ -39,37 +40,6 @@ class ActionsViewController: UIViewController {
         self.A_TextField.text = "0.0"
         self.B_TextField.text = "0.0"
         self.C_TextField.text = "0.0"
-    }
-    
-    func setActionButtons() {
-        for kukaAction in KukaActions.allCases {
-            switch kukaAction {
-            case .read_cartessian:
-                let actionButton: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: ActionsStackView.frame.width, height: 50))
-                actionButton.backgroundColor = .clear
-                actionButton.setTitle(kukaAction.rawValue, for: .normal)
-                actionButton.addTarget(self, action: #selector(readCartessianPressed), for: .touchUpInside)
-                actionButton.isEnabled = false
-                actionButtons[kukaAction] = actionButton
-                print("read_cartessian")
-            case .read_name:
-                print("read_name")
-            case .open_grip:
-                print("open_grip")
-            case .close_grip:
-                print("close_grip")
-            case .ptp:
-                print("set_base")
-                let actionButton: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: ActionsStackView.frame.width, height: 70))
-                actionButton.backgroundColor = .clear
-                actionButton.setTitle(kukaAction.rawValue, for: .normal)
-                actionButton.addTarget(self, action: #selector(setBasePressed), for: .touchUpInside)
-                actionButton.isEnabled = false
-                actionButtons[kukaAction] = actionButton
-            case .read_tcp_velocity:
-                print("read_tcp_velocity")
-            }
-        }
     }
     
     @objc func readCartessianPressed(sender: UIButton!) {
@@ -100,20 +70,10 @@ class ActionsViewController: UIViewController {
         arr.append(C_TextField.text ?? "0")
         Kuka.ptp(robot: self.robot!, arr: arr)
     }
-    func setStackView() {
-        for kukaAction in KukaActions.allCases {
-            if (kukaAction == .read_cartessian || kukaAction == .ptp) {
-                self.ActionsStackView.addArrangedSubview(self.actionButtons[kukaAction]!)
-            }
-        }
-    }
     
-    @IBAction func ActionsBarButtonPressed(_ sender: Any) {
-//        let newKuka = Kuka.read_cartenssian(robot: self.robot!)
-        for actionButton in ActionsStackView.arrangedSubviews {
-            print((actionButton as! UIButton).isEnabled)
-            (actionButton as! UIButton).isEnabled = !(actionButton as! UIButton).isEnabled
-        }
-        self.ActionsStackView.isHidden = !self.ActionsStackView.isHidden
+    @IBAction func disconnectButtonPressed(_ sender: Any) {
+        self.disconnectButton.isEnabled = false
+        sleep(1)
+        navigationController?.popViewController(animated: true)
     }
 }
