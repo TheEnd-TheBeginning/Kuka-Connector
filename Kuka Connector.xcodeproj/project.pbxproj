@@ -60,13 +60,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4452445B29ACC67700051F00 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		4452445C29ACC67C00051F00 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,20 +90,6 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		4452446F29AF204900051F00 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		4452447029AF205C00051F00 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		CE76DAD0296D7C3100970780 = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +109,7 @@
 		CE76DADB296D7C3100970780 /* Kuka Connector */ = {
 			isa = PBXGroup;
 			children = (
-				4452447029AF205C00051F00 /* ViewModel */,
-				4452446F29AF204900051F00 /* Coordinator */,
 				4452445C29ACC67C00051F00 /* View */,
-				4452445B29ACC67700051F00 /* Model */,
 				CE76DAF3296D7C7400970780 /* Libs */,
 				CE76DADC296D7C3100970780 /* AppDelegate.swift */,
 				CE76DAE0296D7C3200970780 /* ViewController.swift */,
