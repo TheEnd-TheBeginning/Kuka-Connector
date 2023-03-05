@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        self.connectButton.buttonColorSet = .purpleButton
         self.connectButton.buttonTextLabel = "ПОДКЛЮЧИТЬСЯ"
         self.navigationItem.backButtonTitle = ""
+//        self.tryIpInput.becomeFirstResponder()
+//        self.ipInput.resignFirstResponder()
+//        self.portInput.resignFirstResponder()
         
         self.ipInput.delegate = self
         self.portInput.delegate = self

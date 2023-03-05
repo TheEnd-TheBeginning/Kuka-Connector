@@ -20,3 +20,17 @@ class UnderwrittenTextField: UITextField {
         self.font = Customization.getCustomFont(font: .Menlo, size: 17, width: .regular)
     }
 }
+//
+////если поле под айпишник
+//extension UnderwrittenTextField {
+//    func isCorrect() {
+////        var separatedArray = self.text.components(separatedBy: ".")
+////        if
+////        if ()
+//    }
+//}
+//
+////если поле под порт
+//extension UnderwrittenTextField {
+//    
+//}

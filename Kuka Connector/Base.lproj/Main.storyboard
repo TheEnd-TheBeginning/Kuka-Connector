@@ -32,42 +32,6 @@
                                     <action selector="connectButtonPressed:" destination="gxU-ah-uBJ" eventType="touchUpInside" id="W8k-Hu-XSh"/>
                                 </connections>
                             </button>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2A-7U-tCq" customClass="NeonBorderView" customModule="Kuka_Connector" customModuleProvider="target">
-                                <rect key="frame" x="30" y="153" width="333" height="105"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.0.0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxd-fG-mAV" customClass="UnderwrittenTextField" customModule="Kuka_Connector" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="50" width="283" height="35"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="G6F-dn-KRn"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP-адрес" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sue-JJ-tRb">
-                                        <rect key="frame" x="25" y="20" width="283" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="283" id="6eh-ax-BZk"/>
-                                            <constraint firstAttribute="height" constant="25" id="D8b-V1-VOD"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                        <color key="textColor" red="0.88116092950000002" green="1" blue="0.93796686780000005" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Dxd-fG-mAV" firstAttribute="leading" secondItem="sue-JJ-tRb" secondAttribute="leading" id="ARM-d9-I6f"/>
-                                    <constraint firstItem="Dxd-fG-mAV" firstAttribute="trailing" secondItem="sue-JJ-tRb" secondAttribute="trailing" id="Cw5-dS-PeM"/>
-                                    <constraint firstItem="sue-JJ-tRb" firstAttribute="leading" secondItem="s2A-7U-tCq" secondAttribute="leading" constant="25" id="Dca-oo-xzw"/>
-                                    <constraint firstAttribute="width" constant="333" id="MRx-HP-AYD"/>
-                                    <constraint firstAttribute="height" constant="105" id="POa-PP-w4d"/>
-                                    <constraint firstItem="Dxd-fG-mAV" firstAttribute="top" secondItem="sue-JJ-tRb" secondAttribute="bottom" constant="5" id="R44-SL-w5Q"/>
-                                    <constraint firstItem="sue-JJ-tRb" firstAttribute="top" secondItem="s2A-7U-tCq" secondAttribute="top" constant="20" id="sDv-Ax-6c8"/>
-                                    <constraint firstAttribute="trailing" secondItem="sue-JJ-tRb" secondAttribute="trailing" constant="25" id="tIi-ND-Zd7"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-Df-OuV" customClass="NeonBorderView" customModule="Kuka_Connector" customModuleProvider="target">
                                 <rect key="frame" x="30" y="273" width="333" height="105"/>
                                 <subviews>
@@ -80,7 +44,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Порт" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8x-AI-wdG">
                                         <rect key="frame" x="25" y="20" width="283" height="25"/>
@@ -104,24 +68,59 @@
                                     <constraint firstItem="lNH-dG-b0F" firstAttribute="top" secondItem="K8x-AI-wdG" secondAttribute="bottom" constant="5" id="zvr-pI-Tm7"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRY-Af-yTw" customClass="NeonBorderView" customModule="Kuka_Connector" customModuleProvider="target">
+                                <rect key="frame" x="30" y="153" width="333" height="105"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.0.0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IY6-PL-pU9" customClass="UnderwrittenTextField" customModule="Kuka_Connector" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="50" width="283" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4zD-g7-ISy"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP-адрес" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7F-4g-V66">
+                                        <rect key="frame" x="25" y="20" width="283" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="283" id="8c5-Ex-3fB"/>
+                                            <constraint firstAttribute="height" constant="25" id="e0g-De-mll"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                        <color key="textColor" red="0.88116092950000002" green="1" blue="0.93796686780000005" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="IY6-PL-pU9" firstAttribute="top" secondItem="Q7F-4g-V66" secondAttribute="bottom" constant="5" id="Ba2-R1-Vh6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q7F-4g-V66" secondAttribute="trailing" constant="25" id="DYf-c9-6pD"/>
+                                    <constraint firstItem="Q7F-4g-V66" firstAttribute="top" secondItem="SRY-Af-yTw" secondAttribute="top" constant="20" id="KD5-KF-1L6"/>
+                                    <constraint firstItem="Q7F-4g-V66" firstAttribute="leading" secondItem="SRY-Af-yTw" secondAttribute="leading" constant="25" id="SUH-cC-Mdk"/>
+                                    <constraint firstAttribute="height" constant="105" id="d7m-tf-rVv"/>
+                                    <constraint firstItem="IY6-PL-pU9" firstAttribute="trailing" secondItem="Q7F-4g-V66" secondAttribute="trailing" id="tYb-vx-m4v"/>
+                                    <constraint firstItem="IY6-PL-pU9" firstAttribute="leading" secondItem="Q7F-4g-V66" secondAttribute="leading" id="ugt-5f-xSc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fa0-Ht-fUW"/>
                         <color key="backgroundColor" name="BackgroundView"/>
                         <constraints>
-                            <constraint firstItem="LI7-Df-OuV" firstAttribute="trailing" secondItem="s2A-7U-tCq" secondAttribute="trailing" id="3uu-sB-PcB"/>
                             <constraint firstItem="Fa0-Ht-fUW" firstAttribute="trailing" secondItem="Cdf-sV-V9e" secondAttribute="trailing" constant="50" id="6Y7-Pz-ALg"/>
-                            <constraint firstItem="LI7-Df-OuV" firstAttribute="top" secondItem="s2A-7U-tCq" secondAttribute="bottom" constant="15" id="Ait-VP-d4R"/>
                             <constraint firstItem="Cdf-sV-V9e" firstAttribute="top" secondItem="LI7-Df-OuV" secondAttribute="bottom" constant="40" id="GBY-4e-54h"/>
-                            <constraint firstItem="s2A-7U-tCq" firstAttribute="top" secondItem="Fa0-Ht-fUW" secondAttribute="top" constant="50" id="MMq-70-zY8"/>
                             <constraint firstItem="Cdf-sV-V9e" firstAttribute="leading" secondItem="Fa0-Ht-fUW" secondAttribute="leading" constant="50" id="NA1-Zk-Dbu"/>
-                            <constraint firstItem="s2A-7U-tCq" firstAttribute="centerX" secondItem="hZc-AE-BaD" secondAttribute="centerX" id="OZf-5a-Ffe"/>
-                            <constraint firstItem="LI7-Df-OuV" firstAttribute="leading" secondItem="s2A-7U-tCq" secondAttribute="leading" id="qfm-tZ-FLm"/>
+                            <constraint firstItem="SRY-Af-yTw" firstAttribute="centerX" secondItem="hZc-AE-BaD" secondAttribute="centerX" id="Q0h-8X-u94"/>
+                            <constraint firstItem="LI7-Df-OuV" firstAttribute="top" secondItem="SRY-Af-yTw" secondAttribute="bottom" constant="15" id="YNP-LK-zeg"/>
+                            <constraint firstItem="SRY-Af-yTw" firstAttribute="top" secondItem="Fa0-Ht-fUW" secondAttribute="top" constant="50" id="dCU-lK-yab"/>
+                            <constraint firstItem="LI7-Df-OuV" firstAttribute="centerX" secondItem="hZc-AE-BaD" secondAttribute="centerX" id="r0u-UJ-TV9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Подключение" id="qzl-Bm-eeZ"/>
                     <connections>
                         <outlet property="connectButton" destination="Cdf-sV-V9e" id="g82-PH-8AQ"/>
-                        <outlet property="ipInput" destination="Dxd-fG-mAV" id="f1X-6a-lK7"/>
+                        <outlet property="ipInput" destination="IY6-PL-pU9" id="BCp-eF-tcV"/>
                         <outlet property="portInput" destination="lNH-dG-b0F" id="a7R-hb-nv7"/>
                         <segue destination="Phk-VH-MPi" kind="show" identifier="goToActions" id="jd6-6r-i8N"/>
                     </connections>
@@ -172,7 +171,6 @@
                                     <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="connectButtonPressed:" destination="gxU-ah-uBJ" eventType="touchUpInside" id="LY9-7W-W48"/>
                                     <action selector="disconnectButtonPressed:" destination="Phk-VH-MPi" eventType="touchUpInside" id="g63-O5-7yY"/>
                                 </connections>
                             </button>
