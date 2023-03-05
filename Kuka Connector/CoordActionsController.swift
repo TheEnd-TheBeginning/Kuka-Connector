@@ -18,11 +18,11 @@ class CoordActionsController: UIViewController {
     //    @IBOutlet weak var readCartenssianButton: NeonButton!
 //    @IBOutlet weak var writeCartenssianButton: NeonButton!
     
-    var actionButtons: [KukaActions:UIButton] = [:]
     var robot: Openshowvar? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.disconnectButton.buttonColorSet = .purpleButton
         self.disconnectButton.buttonTextLabel = "ОТКЛЮЧИТЬСЯ"
         
@@ -65,5 +65,8 @@ class CoordActionsController: UIViewController {
         self.disconnectButton.isEnabled = false
         sleep(1)
         navigationController?.popViewController(animated: true)
+    }
+    @IBAction func writeButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToChangeCoord", sender: nil)
     }
 }

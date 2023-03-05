@@ -16,6 +16,9 @@
 		4453CEC029B0BD63002A927E /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBF29B0BD63002A927E /* ViewConstants.swift */; };
 		CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */; };
 		CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D2B2970AE0300A866DE /* Box.swift */; };
+		CE62A28829B51AB400E374E5 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28729B51AB400E374E5 /* MenuButton.swift */; };
+		CE62A28B29B5394900E374E5 /* SimpleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28A29B5394900E374E5 /* SimpleLabel.swift */; };
+		CE62A28E29B53D4400E374E5 /* ModelEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28D29B53D4400E374E5 /* ModelEnums.swift */; };
 		CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DADC296D7C3100970780 /* AppDelegate.swift */; };
 		CE76DAE1296D7C3200970780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAE0296D7C3200970780 /* ViewController.swift */; };
 		CE76DAE4296D7C3200970780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE76DAE2296D7C3200970780 /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 		4453CEBF29B0BD63002A927E /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
 		CE2F4D2B2970AE0300A866DE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		CE62A28729B51AB400E374E5 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		CE62A28A29B5394900E374E5 /* SimpleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLabel.swift; sourceTree = "<group>"; };
+		CE62A28D29B53D4400E374E5 /* ModelEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEnums.swift; sourceTree = "<group>"; };
 		CE76DAD9296D7C3100970780 /* Kuka Connector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kuka Connector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE76DADC296D7C3100970780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE76DAE0296D7C3200970780 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 		4452445C29ACC67C00051F00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE62A28929B5390B00E374E5 /* Labels */,
 				4452446229ACC70900051F00 /* Buttons */,
 				4452445F29ACC6A200051F00 /* AddressView */,
 				4452446B29ACD8F700051F00 /* Customization.swift */,
@@ -76,7 +83,6 @@
 				4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */,
 				4453CEBD29B0A735002A927E /* UnderwrittenTextField.swift */,
 				4453CEBF29B0BD63002A927E /* ViewConstants.swift */,
-				CE862FC329B4893A00D646B2 /* CoordLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,8 +100,27 @@
 			children = (
 				440884E929AF2F6400F28485 /* NeonButton.swift */,
 				CE862FC729B4ACFE00D646B2 /* SimpleButton.swift */,
+				CE62A28729B51AB400E374E5 /* MenuButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CE62A28929B5390B00E374E5 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				CE862FC329B4893A00D646B2 /* CoordLabel.swift */,
+				CE62A28A29B5394900E374E5 /* SimpleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		CE62A28C29B53D3100E374E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE62A28D29B53D4400E374E5 /* ModelEnums.swift */,
+				CE76DAF3296D7C7400970780 /* Libs */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CE76DAD0296D7C3100970780 = {
@@ -117,8 +142,8 @@
 		CE76DADB296D7C3100970780 /* Kuka Connector */ = {
 			isa = PBXGroup;
 			children = (
+				CE62A28C29B53D3100E374E5 /* Model */,
 				4452445C29ACC67C00051F00 /* View */,
-				CE76DAF3296D7C7400970780 /* Libs */,
 				CE76DADC296D7C3100970780 /* AppDelegate.swift */,
 				CE76DAE0296D7C3200970780 /* ViewController.swift */,
 				CE862FC529B48BD000D646B2 /* CoordActionsController.swift */,
@@ -216,11 +241,13 @@
 			files = (
 				4453CEBC29B0A2CD002A927E /* NeonBorderView.swift in Sources */,
 				CE76DAF7296D7DAE00970780 /* Openshowvar.swift in Sources */,
+				CE62A28B29B5394900E374E5 /* SimpleLabel.swift in Sources */,
 				CE862FC829B4ACFE00D646B2 /* SimpleButton.swift in Sources */,
 				4453CEC029B0BD63002A927E /* ViewConstants.swift in Sources */,
 				CE862FC629B48BD000D646B2 /* CoordActionsController.swift in Sources */,
 				440884EA29AF2F6400F28485 /* NeonButton.swift in Sources */,
 				CE76DAE1296D7C3200970780 /* ViewController.swift in Sources */,
+				CE62A28E29B53D4400E374E5 /* ModelEnums.swift in Sources */,
 				CE76DAF9296DD3E800970780 /* Kuka.swift in Sources */,
 				CE76DAF5296D7D1600970780 /* BSDSocket.swift in Sources */,
 				4452446129ACC6FA00051F00 /* AddressView.swift in Sources */,
@@ -228,6 +255,7 @@
 				4452447229AF209C00051F00 /* ViewEnums.swift in Sources */,
 				CE862FC429B4893A00D646B2 /* CoordLabel.swift in Sources */,
 				CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */,
+				CE62A28829B51AB400E374E5 /* MenuButton.swift in Sources */,
 				CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */,
 				CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */,
 				4452446C29ACD8F700051F00 /* Customization.swift in Sources */,

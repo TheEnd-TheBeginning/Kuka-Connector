@@ -12,14 +12,22 @@ class SimpleButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 10
-        self.layer.borderWidth = 2
-        self.layer.borderColor = ColorNamesEnum.MainGreenButton.cgColor.copy(alpha: 0.5)
-        self.backgroundColor = ColorNamesEnum.BacklightGreenButton.uiColor.withAlphaComponent(0.5)
-        self.buttonTextLabel = self.currentTitle ?? ""
-        var attributedLabel = Customization.getCustomLabel(labelString: self.buttonTextLabel, labelColor: ColorNamesEnum.MainGreenButton.uiColor, shadowColor: .clear)
-        self.setAttributedTitle(attributedLabel, for: .normal)
         
+        self.layer.borderWidth = 2
+        self.layer.borderColor = ColorNamesEnum.BacklightTextGreenButton.cgColor
+        self.layer.cornerRadius = 10
+        
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.layer.shadowColor = ColorNamesEnum.BacklightTextGreenButton.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 10
+        
+
+        
+        self.backgroundColor = .clear
+        self.buttonTextLabel = self.currentTitle ?? ""
+        let attributedLabel = Customization.getCustomLabel(labelString: self.buttonTextLabel, labelColor: ColorNamesEnum.BacklightGreenButton.uiColor.withAlphaComponent(0.5), shadowColor: .clear)
+        self.setAttributedTitle(attributedLabel, for: .normal)
     }
 
     /*
