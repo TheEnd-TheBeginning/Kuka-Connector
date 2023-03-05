@@ -15,39 +15,34 @@ class CoordActionsController: UIViewController {
     @IBOutlet weak var B_LabelField: CoordLabel!
     @IBOutlet weak var C_LabelField: CoordLabel!
     @IBOutlet weak var disconnectButton: NeonButton!
-    //    @IBOutlet weak var readCartenssianButton: NeonButton!
-//    @IBOutlet weak var writeCartenssianButton: NeonButton!
     
     var robot: Openshowvar? = nil
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.refreshCoord()
+        self.disconnectButton.isEnabled = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.disconnectButton.buttonColorSet = .purpleButton
         self.disconnectButton.buttonTextLabel = "ОТКЛЮЧИТЬСЯ"
-        
-//        self.readCartenssianButton.buttonTextLabel = "Прочитать переменные"
-//        self.writeCartenssianButton.buttonTextLabel = "Записать переменные"
-        
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-    }
-    
-    @objc func readCartessianPressed(sender: UIButton!) {
-        let cartessians = Kuka.read_cartenssian(robot: self.robot!)
-    }
-    
-    @objc func setBasePressed(sender: UIButton!) {
-        Kuka.set_base(robot: self.robot!, arr: [0,0,0,0,0,0])
     }
     
     @IBAction func pressedRefreshButton(_ sender: Any) {
-//        let cartessians = Kuka.read_cartenssian(robot: self.robot!)
-        self.x_LabelField.text = "1.1"//String(cartessians.x_cartessian)
-        self.y_LabelField.text = "1.1"//String(cartessians.y_cartessian)
-        self.z_LabelField.text = "1.1"//String(cartessians.z_cartessian)
-        self.A_LabelField.text = "1.1"//String(cartessians.A_cartessian)
-        self.B_LabelField.text = "1.1"//String(cartessians.B_cartessian)
-        self.C_LabelField.text = "1.1"//String(cartessians.C_cartessian)
+        self.refreshCoord()
+    }
+    
+    func refreshCoord() {
+        let cartessians = Kuka.read_cartenssian(robot: self.robot!)
+        self.x_LabelField.text = String(cartessians.x_cartessian)
+        self.y_LabelField.text = String(cartessians.y_cartessian)
+        self.z_LabelField.text = String(cartessians.z_cartessian)
+        self.A_LabelField.text = String(cartessians.A_cartessian)
+        self.B_LabelField.text = String(cartessians.B_cartessian)
+        self.C_LabelField.text = String(cartessians.C_cartessian)
     }
     
     @IBAction func pressedSetBase(_ sender: Any) {
@@ -63,7 +58,7 @@ class CoordActionsController: UIViewController {
     
     @IBAction func disconnectButtonPressed(_ sender: Any) {
         self.disconnectButton.isEnabled = false
-        sleep(1)
+        robot?.sock?.closeSocket()
         navigationController?.popViewController(animated: true)
     }
     @IBAction func writeButtonPressed(_ sender: Any) {

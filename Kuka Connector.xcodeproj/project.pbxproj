@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		440884EA29AF2F6400F28485 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440884E929AF2F6400F28485 /* NeonButton.swift */; };
-		4452446129ACC6FA00051F00 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452446029ACC6FA00051F00 /* AddressView.swift */; };
 		4452446C29ACD8F700051F00 /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452446B29ACD8F700051F00 /* Customization.swift */; };
 		4452447229AF209C00051F00 /* ViewEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452447129AF209C00051F00 /* ViewEnums.swift */; };
 		4453CEBC29B0A2CD002A927E /* NeonBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */; };
@@ -34,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		440884E929AF2F6400F28485 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
-		4452446029ACC6FA00051F00 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		4452446B29ACD8F700051F00 /* Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
 		4452447129AF209C00051F00 /* ViewEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEnums.swift; sourceTree = "<group>"; };
 		4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonBorderView.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 			children = (
 				CE62A28929B5390B00E374E5 /* Labels */,
 				4452446229ACC70900051F00 /* Buttons */,
-				4452445F29ACC6A200051F00 /* AddressView */,
 				4452446B29ACD8F700051F00 /* Customization.swift */,
 				4452447129AF209C00051F00 /* ViewEnums.swift */,
 				4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */,
@@ -85,14 +82,6 @@
 				4453CEBF29B0BD63002A927E /* ViewConstants.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		4452445F29ACC6A200051F00 /* AddressView */ = {
-			isa = PBXGroup;
-			children = (
-				4452446029ACC6FA00051F00 /* AddressView.swift */,
-			);
-			path = AddressView;
 			sourceTree = "<group>";
 		};
 		4452446229ACC70900051F00 /* Buttons */ = {
@@ -250,7 +239,6 @@
 				CE62A28E29B53D4400E374E5 /* ModelEnums.swift in Sources */,
 				CE76DAF9296DD3E800970780 /* Kuka.swift in Sources */,
 				CE76DAF5296D7D1600970780 /* BSDSocket.swift in Sources */,
-				4452446129ACC6FA00051F00 /* AddressView.swift in Sources */,
 				4453CEBE29B0A735002A927E /* UnderwrittenTextField.swift in Sources */,
 				4452447229AF209C00051F00 /* ViewEnums.swift in Sources */,
 				CE862FC429B4893A00D646B2 /* CoordLabel.swift in Sources */,
