@@ -41,7 +41,7 @@ class NeonButton: UIButton {
     override func draw(_ rect: CGRect) {
         self.backgroundColor = .clear
         self.layer.cornerRadius = 10
-        self.layer.borderWidth = 3.0
+        self.layer.borderWidth = 1.5
 
         if isEnabled {
             self.touchUp()

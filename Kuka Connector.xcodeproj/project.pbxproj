@@ -24,6 +24,9 @@
 		CE76DAF5296D7D1600970780 /* BSDSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAF4296D7D1600970780 /* BSDSocket.swift */; };
 		CE76DAF7296D7DAE00970780 /* Openshowvar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAF6296D7DAE00970780 /* Openshowvar.swift */; };
 		CE76DAF9296DD3E800970780 /* Kuka.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAF8296DD3E800970780 /* Kuka.swift */; };
+		CE862FC429B4893A00D646B2 /* CoordLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE862FC329B4893A00D646B2 /* CoordLabel.swift */; };
+		CE862FC629B48BD000D646B2 /* CoordActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE862FC529B48BD000D646B2 /* CoordActionsController.swift */; };
+		CE862FC829B4ACFE00D646B2 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE862FC729B4ACFE00D646B2 /* SimpleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		CE76DAF4296D7D1600970780 /* BSDSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSDSocket.swift; sourceTree = "<group>"; };
 		CE76DAF6296D7DAE00970780 /* Openshowvar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Openshowvar.swift; sourceTree = "<group>"; };
 		CE76DAF8296DD3E800970780 /* Kuka.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kuka.swift; sourceTree = "<group>"; };
+		CE862FC329B4893A00D646B2 /* CoordLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordLabel.swift; sourceTree = "<group>"; };
+		CE862FC529B48BD000D646B2 /* CoordActionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordActionsController.swift; sourceTree = "<group>"; };
+		CE862FC729B4ACFE00D646B2 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */,
 				4453CEBD29B0A735002A927E /* UnderwrittenTextField.swift */,
 				4453CEBF29B0BD63002A927E /* ViewConstants.swift */,
+				CE862FC329B4893A00D646B2 /* CoordLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -86,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				440884E929AF2F6400F28485 /* NeonButton.swift */,
+				CE862FC729B4ACFE00D646B2 /* SimpleButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 				CE76DAF3296D7C7400970780 /* Libs */,
 				CE76DADC296D7C3100970780 /* AppDelegate.swift */,
 				CE76DAE0296D7C3200970780 /* ViewController.swift */,
+				CE862FC529B48BD000D646B2 /* CoordActionsController.swift */,
 				CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */,
 				CE76DAE2296D7C3200970780 /* Main.storyboard */,
 				CE76DAE8296D7C3800970780 /* Assets.xcassets */,
@@ -207,7 +216,9 @@
 			files = (
 				4453CEBC29B0A2CD002A927E /* NeonBorderView.swift in Sources */,
 				CE76DAF7296D7DAE00970780 /* Openshowvar.swift in Sources */,
+				CE862FC829B4ACFE00D646B2 /* SimpleButton.swift in Sources */,
 				4453CEC029B0BD63002A927E /* ViewConstants.swift in Sources */,
+				CE862FC629B48BD000D646B2 /* CoordActionsController.swift in Sources */,
 				440884EA29AF2F6400F28485 /* NeonButton.swift in Sources */,
 				CE76DAE1296D7C3200970780 /* ViewController.swift in Sources */,
 				CE76DAF9296DD3E800970780 /* Kuka.swift in Sources */,
@@ -215,6 +226,7 @@
 				4452446129ACC6FA00051F00 /* AddressView.swift in Sources */,
 				4453CEBE29B0A735002A927E /* UnderwrittenTextField.swift in Sources */,
 				4452447229AF209C00051F00 /* ViewEnums.swift in Sources */,
+				CE862FC429B4893A00D646B2 /* CoordLabel.swift in Sources */,
 				CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */,
 				CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */,
 				CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */,

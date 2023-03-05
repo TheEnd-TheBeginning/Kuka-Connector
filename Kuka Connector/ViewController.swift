@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToActions" {
-            if let destination = segue.destination as? ActionsViewController {
+            if let destination = segue.destination as? CoordActionsController {
                 destination.robot = self.robot
             }
         }
