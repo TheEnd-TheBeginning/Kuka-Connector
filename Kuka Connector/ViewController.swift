@@ -67,6 +67,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if (ipInput.text != "" && ipInput.text != nil) {
             if (portInput.text != nil && portInput.text != "") {
                 if let intPort = Int(portInput.text!) {
+                    self.saveAddressInDefaults()
                     self.connectToSocket(intPort: intPort)
                 } else {
 //                    self.connectButton.isEnabled = true
