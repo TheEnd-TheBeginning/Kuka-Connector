@@ -11,6 +11,7 @@ class UnderwrittenTextField: UITextField {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = ColorNamesEnum.BackgroundTextField.uiColor
         self.layer.backgroundColor = ColorNamesEnum.BackgroundTextField.cgColor
         self.textColor = UIColor.black.withAlphaComponent(0.5)
         self.layer.borderColor = UIColor.black.cgColor.copy(alpha: 0.2)
