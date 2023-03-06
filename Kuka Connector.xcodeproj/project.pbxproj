@@ -13,9 +13,7 @@
 		4453CEBC29B0A2CD002A927E /* NeonBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */; };
 		4453CEBE29B0A735002A927E /* UnderwrittenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBD29B0A735002A927E /* UnderwrittenTextField.swift */; };
 		4453CEC029B0BD63002A927E /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBF29B0BD63002A927E /* ViewConstants.swift */; };
-		CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */; };
 		CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D2B2970AE0300A866DE /* Box.swift */; };
-		CE62A28829B51AB400E374E5 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28729B51AB400E374E5 /* MenuButton.swift */; };
 		CE62A28B29B5394900E374E5 /* SimpleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28A29B5394900E374E5 /* SimpleLabel.swift */; };
 		CE62A28E29B53D4400E374E5 /* ModelEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28D29B53D4400E374E5 /* ModelEnums.swift */; };
 		CE62A29029B54C9600E374E5 /* ChangeCoordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28F29B54C9600E374E5 /* ChangeCoordController.swift */; };
@@ -39,9 +37,7 @@
 		4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonBorderView.swift; sourceTree = "<group>"; };
 		4453CEBD29B0A735002A927E /* UnderwrittenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderwrittenTextField.swift; sourceTree = "<group>"; };
 		4453CEBF29B0BD63002A927E /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
-		CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
 		CE2F4D2B2970AE0300A866DE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
-		CE62A28729B51AB400E374E5 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		CE62A28A29B5394900E374E5 /* SimpleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLabel.swift; sourceTree = "<group>"; };
 		CE62A28D29B53D4400E374E5 /* ModelEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEnums.swift; sourceTree = "<group>"; };
 		CE62A28F29B54C9600E374E5 /* ChangeCoordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCoordController.swift; sourceTree = "<group>"; };
@@ -75,6 +71,7 @@
 		4452445C29ACC67C00051F00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE62A29229B564F900E374E5 /* ViewControllers */,
 				CE62A28929B5390B00E374E5 /* Labels */,
 				4452446229ACC70900051F00 /* Buttons */,
 				4452446B29ACD8F700051F00 /* Customization.swift */,
@@ -91,7 +88,6 @@
 			children = (
 				440884E929AF2F6400F28485 /* NeonButton.swift */,
 				CE862FC729B4ACFE00D646B2 /* SimpleButton.swift */,
-				CE62A28729B51AB400E374E5 /* MenuButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -114,6 +110,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CE62A29129B564AA00E374E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F4D2B2970AE0300A866DE /* Box.swift */,
+				CE76DAF8296DD3E800970780 /* Kuka.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE62A29229B564F900E374E5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE62A28F29B54C9600E374E5 /* ChangeCoordController.swift */,
+				CE76DAE0296D7C3200970780 /* ViewController.swift */,
+				CE862FC529B48BD000D646B2 /* CoordActionsController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		CE76DAD0296D7C3100970780 = {
 			isa = PBXGroup;
 			children = (
@@ -133,19 +148,15 @@
 		CE76DADB296D7C3100970780 /* Kuka Connector */ = {
 			isa = PBXGroup;
 			children = (
+				CE62A29129B564AA00E374E5 /* ViewModel */,
 				CE62A28C29B53D3100E374E5 /* Model */,
 				4452445C29ACC67C00051F00 /* View */,
 				CE76DADC296D7C3100970780 /* AppDelegate.swift */,
-				CE62A28F29B54C9600E374E5 /* ChangeCoordController.swift */,
-				CE76DAE0296D7C3200970780 /* ViewController.swift */,
-				CE862FC529B48BD000D646B2 /* CoordActionsController.swift */,
-				CE2F4D29296EEDA300A866DE /* ActionsViewController.swift */,
 				CE76DAE2296D7C3200970780 /* Main.storyboard */,
 				CE76DAE8296D7C3800970780 /* Assets.xcassets */,
 				CE76DAEA296D7C3800970780 /* LaunchScreen.storyboard */,
 				CE76DAED296D7C3800970780 /* Info.plist */,
 				CE76DAE5296D7C3200970780 /* Kuka_Connector.xcdatamodeld */,
-				CE2F4D2B2970AE0300A866DE /* Box.swift */,
 			);
 			path = "Kuka Connector";
 			sourceTree = "<group>";
@@ -155,7 +166,6 @@
 			children = (
 				CE76DAF4296D7D1600970780 /* BSDSocket.swift */,
 				CE76DAF6296D7DAE00970780 /* Openshowvar.swift */,
-				CE76DAF8296DD3E800970780 /* Kuka.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -247,8 +257,6 @@
 				4452447229AF209C00051F00 /* ViewEnums.swift in Sources */,
 				CE862FC429B4893A00D646B2 /* CoordLabel.swift in Sources */,
 				CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */,
-				CE62A28829B51AB400E374E5 /* MenuButton.swift in Sources */,
-				CE2F4D2A296EEDA300A866DE /* ActionsViewController.swift in Sources */,
 				CE76DADD296D7C3100970780 /* AppDelegate.swift in Sources */,
 				4452446C29ACD8F700051F00 /* Customization.swift in Sources */,
 			);
