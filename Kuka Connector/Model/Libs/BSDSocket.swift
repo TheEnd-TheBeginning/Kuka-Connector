@@ -18,12 +18,6 @@ class BSD_Socket {
                            SOCK_STREAM, //Type [SOCK_STREAM, SOCK_DGRAM, SOCK_SEQPACKET, SOCK_RAW]
                            IPPROTO_TCP  //Protocol [IPPROTO_TCP, IPPROTO_SCTP, IPPROTO_UDP, IPPROTO_DCCP]
         )//Return a FileDescriptor -1 = error
-        //        socket(_: Int32, _: Int32, _: Int32)int nonBlocking = 1;
-        //Разблокирование сокета
-//        var flags = fcntl(self.sock , F_GETFL, 0)
-//        fcntl(self.sock , F_SETFL, flags|O_NONBLOCK)
-//        var imode: Int32 = 1
-//        ioctl(sock , UInt(O_NONBLOCK), &imode)
     }
     
     func connectSocket(ip: String, port: UInt16) -> Int32 {
@@ -46,46 +40,10 @@ class BSD_Socket {
         })
         
         let socketAddressLength = socklen_t(MemoryLayout<sockaddr>.size)
-                
-        // Принудительное преобразование указателя Swift сложнее, чем OC
-//       let pointer: UnsafePointer = withUnsafePointer(to: &sockAddress, {$0.withMemoryRebound(to: sockaddr.self, capacity: 1, {$0})})
-//
-//        var result = connect(self.sock, pointer, socklen_t(MemoryLayout.size(ofValue: sockAddress)))
         
         let connectSuccess = withUnsafePointer(to: &sockAddress, { $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { zeroSockAddress in
             print("start connect")
             return connect(self.sock, zeroSockAddress, socklen_t(socketAddressLength))
-//            let success = connect(self.sock, zeroSockAddress, socklen_t(socketAddressLength))
-//            if (success == 0) {
-//                return success
-//            } else {
-//                print("Get The Connect Result by select().\n")
-//                if (errno == EINPROGRESS) {
-//                    var rfds: fd_set = fd_set()
-//                    var wfds: fd_set = fd_set()
-//                    __darwin_fd_set(self.sock, &rfds)
-//                    __darwin_fd_set(self.sock, &wfds)
-//                    var timeout:timeval = timeval(tv_sec: 5, tv_usec: 0)
-//                    let status = select(self.sock + 1, &rfds, &wfds, nil, &timeout)
-//                    if (status == 0) {
-//                        print("status")
-//                        return success
-//                    } else {
-//                        print("success")
-//                        if ((__darwin_fd_isset(self.sock, &rfds) != 0) || (__darwin_fd_isset(self.sock, &wfds) != 0)){
-//                            var errinfo: Int32 = 1, errlen: Int32 = 1
-//                            if (-1 == getsockopt(self.sock, SOL_SOCKET, SO_ERROR, &errinfo, &errlen)){
-//                                print("getsockopt return -1.\n")
-//                            } else if (0 != errinfo) {
-//                                print("getsockopt return errinfo = %d.\n", errinfo)
-//                            }
-//                        }
-//                        return 0
-//                    }
-//                } else {
-//                    return success
-//                }
-//            }
         }})
         return connectSuccess
     }

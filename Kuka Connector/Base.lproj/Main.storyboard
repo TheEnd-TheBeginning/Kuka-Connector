@@ -424,6 +424,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Координаты" id="KQv-QT-bSf">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" id="h4j-tr-n6z"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Q94-u6-tq1">
                             <imageReference key="image" image="arrow.counterclockwise" symbolScale="medium" renderingMode="template"/>
                             <connections>
@@ -444,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN4-13-lUy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="39"/>
+            <point key="canvasLocation" x="2408" y="39"/>
         </scene>
         <!--Изменить координаты-->
         <scene sceneID="MOK-a2-34y">

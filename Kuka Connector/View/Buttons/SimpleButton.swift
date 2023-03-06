@@ -29,13 +29,4 @@ class SimpleButton: UIButton {
         let attributedLabel = Customization.getCustomLabel(labelString: self.buttonTextLabel, labelColor: ColorNamesEnum.BacklightGreenButton.uiColor.withAlphaComponent(0.5), shadowColor: .clear)
         self.setAttributedTitle(attributedLabel, for: .normal)
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

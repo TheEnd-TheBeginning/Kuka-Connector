@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.backButtonTitle = ""
+        
         self.connectButton.buttonTextLabel = "ПОДКЛЮЧИТЬСЯ"
         self.navigationItem.backButtonTitle = ""
         
@@ -37,13 +39,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-    
-//    @IBAction func connectButtonPressed(_ sender: Any) {
-//        self.connectButton.isEnabled = false
-//        sleep(1)
-//        self.performSegue(withIdentifier: "goToActions", sender: nil)
-//    }
     
     func saveAddressInDefaults() {
         UserDefaults.standard.set(self.ipInput.text, forKey: "addressIP")
@@ -70,29 +65,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.saveAddressInDefaults()
                     self.connectToSocket(intPort: intPort)
                 } else {
-//                    self.connectButton.isEnabled = true
+                    self.connectButton.isEnabled = true
                     self.presentAlert(title: "Сообщение", message: "Порт должен быть числом")
                 }
             } else {
-//                self.connectButton.isEnabled = true
+                self.connectButton.isEnabled = true
                 self.presentAlert(title: "Сообщение", message: "Заполните поле \"Порт\"")
             }
         } else {
-//            self.connectButton.isEnabled = true
+            self.connectButton.isEnabled = true
             self.presentAlert(title: "Сообщение", message: "Заполните поле \"ip\"")
         }
     }
     
-//    @IBAction func disconnectButtonPressed(_ sender: Any) {
-//        viewModel.robot.sock.closeSocket()
-//        self.presentAlert(title: "Сообщение", message: "Вы отключились")
-//        self.connectButton.isEnabled = true
-//        self.disconnectButton.isEnabled = false
-//    }
-    
     func connectToSocket(intPort: Int) {
         let uint16port: UInt16 = UInt16(intPort)
-//                    self.robot = Openshowvar(ip: ipInput.text!, port: uint16port)
         let ipInputText: String = self.ipInput.text!
         DispatchQueue.global(qos: .userInitiated).async {
             let can_connect = self.robot.connect(ip: ipInputText, port: uint16port)

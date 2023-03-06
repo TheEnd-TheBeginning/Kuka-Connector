@@ -54,7 +54,6 @@ class NeonButton: UIButton {
         attributedLabel = Customization.getCustomLabel(labelString: self.buttonTextLabel, labelColor: self.buttonColorSet.stateColors.disabledState.textColor, shadowColor: self.buttonColorSet.stateColors.disabledState.textColor)
         self.setAttributedTitle(attributedLabel, for: .disabled)
         
-//        let innerRect = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY + 10, width: self.bounds.width - 10, height: self.bounds.height - 10)
         let outerRect = CGRect(x: self.bounds.minX - 3, y: self.bounds.minY - 3, width: self.bounds.width + 6, height: self.bounds.height + 6)
         let cgPath = UIBezierPath(roundedRect: outerRect, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 10.0, height: 10.0)).cgPath
         self.layer.shadowPath = cgPath

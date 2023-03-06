@@ -9,24 +9,6 @@
 
 import Foundation
 
-enum KukaActions: String, CaseIterable {
-    case read_cartessian = "Получить координаты"
-    case read_name = "Узнать имя робота"
-//    case read_advanced = ""
-    case open_grip = "Открыть захват"
-    case close_grip = "Закрыть захват"
-//    case read_APO = ""
-//    case ptp = ""
-//    case read_base = ""
-//    case cvbase = ""
-    case ptp = "Задать координаты"
-//    case set_tool = ""
-//    case read_input = ""
-//    case read_out = ""
-    case read_tcp_velocity = "Узнать скорость"
-//    case read_tool = ""
-}
-
 class Kuka {
     static func send_Frame(robot: Openshowvar, _ arr: [Any], _ system_variable: String = "") {
         var string_arr: [String] = []

@@ -26,6 +26,7 @@ class CoordActionsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.backButtonTitle = ""
         
         self.disconnectButton.buttonColorSet = .purpleButton
         self.disconnectButton.buttonTextLabel = "ОТКЛЮЧИТЬСЯ"

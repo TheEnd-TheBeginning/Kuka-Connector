@@ -26,18 +26,16 @@ class ChangeCoordController: UIViewController {
     
     var robot: Openshowvar? = nil
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.refreshCoord()
-        self.disconnectButton.isEnabled = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.disconnectButton.buttonColorSet = .purpleButton
         self.disconnectButton.buttonTextLabel = "ОТКЛЮЧИТЬСЯ"
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        self.refreshCoord()
+        self.initCoordTextFields()
+        self.disconnectButton.isEnabled = true
     }
     
     @IBAction func pressedRefreshButton(_ sender: Any) {
@@ -54,10 +52,19 @@ class ChangeCoordController: UIViewController {
         self.C_LabelField.text = String(cartessians.C_cartessian)
     }
     
+    func initCoordTextFields() {
+        self.x_TextField.text = self.x_LabelField.text
+        self.y_TextField.text = self.y_LabelField.text
+        self.z_TextField.text = self.z_LabelField.text
+        self.A_TextField.text = self.A_LabelField.text
+        self.B_TextField.text = self.B_LabelField.text
+        self.C_TextField.text = self.C_LabelField.text
+    }
+    
     @IBAction func disconnectButtonPressed(_ sender: Any) {
         self.disconnectButton.isEnabled = false
         robot?.sock?.closeSocket()
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func writeButtonPressed(_ sender: Any) {

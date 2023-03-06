@@ -12,7 +12,6 @@
 		4452447229AF209C00051F00 /* ViewEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452447129AF209C00051F00 /* ViewEnums.swift */; };
 		4453CEBC29B0A2CD002A927E /* NeonBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */; };
 		4453CEBE29B0A735002A927E /* UnderwrittenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBD29B0A735002A927E /* UnderwrittenTextField.swift */; };
-		4453CEC029B0BD63002A927E /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CEBF29B0BD63002A927E /* ViewConstants.swift */; };
 		CE2F4D2C2970AE0400A866DE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F4D2B2970AE0300A866DE /* Box.swift */; };
 		CE62A28B29B5394900E374E5 /* SimpleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28A29B5394900E374E5 /* SimpleLabel.swift */; };
 		CE62A28E29B53D4400E374E5 /* ModelEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62A28D29B53D4400E374E5 /* ModelEnums.swift */; };
@@ -36,7 +35,6 @@
 		4452447129AF209C00051F00 /* ViewEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEnums.swift; sourceTree = "<group>"; };
 		4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonBorderView.swift; sourceTree = "<group>"; };
 		4453CEBD29B0A735002A927E /* UnderwrittenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderwrittenTextField.swift; sourceTree = "<group>"; };
-		4453CEBF29B0BD63002A927E /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		CE2F4D2B2970AE0300A866DE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		CE62A28A29B5394900E374E5 /* SimpleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLabel.swift; sourceTree = "<group>"; };
 		CE62A28D29B53D4400E374E5 /* ModelEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEnums.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				4452447129AF209C00051F00 /* ViewEnums.swift */,
 				4453CEBB29B0A2CD002A927E /* NeonBorderView.swift */,
 				4453CEBD29B0A735002A927E /* UnderwrittenTextField.swift */,
-				4453CEBF29B0BD63002A927E /* ViewConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,7 +242,6 @@
 				CE76DAF7296D7DAE00970780 /* Openshowvar.swift in Sources */,
 				CE62A28B29B5394900E374E5 /* SimpleLabel.swift in Sources */,
 				CE862FC829B4ACFE00D646B2 /* SimpleButton.swift in Sources */,
-				4453CEC029B0BD63002A927E /* ViewConstants.swift in Sources */,
 				CE862FC629B48BD000D646B2 /* CoordActionsController.swift in Sources */,
 				440884EA29AF2F6400F28485 /* NeonButton.swift in Sources */,
 				CE76DAE1296D7C3200970780 /* ViewController.swift in Sources */,
