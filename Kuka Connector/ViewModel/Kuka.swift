@@ -69,15 +69,15 @@ class Kuka {
         let base_frame_x = Float(base_array[2]) ?? 0
         print("x_cartessian: \(base_frame_x)")
         let base_frame_y = Float(base_array[4]) ?? 0
-        print("x_cartessian: \(base_frame_y)")
+        print("y_cartessian: \(base_frame_y)")
         let base_frame_z = Float(base_array[6]) ?? 0
-        print("x_cartessian: \(base_frame_z)")
+        print("z_cartessian: \(base_frame_z)")
         let base_frame_A = Float(base_array[8]) ?? 0
-        print("x_cartessian: \(base_frame_A)")
+        print("A_cartessian: \(base_frame_A)")
         let base_frame_B = Float(base_array[10]) ?? 0
-        print("x_cartessian: \(base_frame_B)")
+        print("B_cartessian: \(base_frame_B)")
         let base_frame_C = Float(base_array[12]) ?? 0
-        print("x_cartessian: \(base_frame_C)")
+        print("C_cartessian: \(base_frame_C)")
         return(base_frame_x, base_frame_y, base_frame_z, base_frame_A, base_frame_B, base_frame_C)
     }
     
